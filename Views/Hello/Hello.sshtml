@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Nancy</title>
+        <link rel="stylesheet" href="Content/style.css"/>
+    </head>
+    <body>
+    <div class="center">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess<p>
+        @If.Context.ViewBag.low
+            <p>Too low!</p>
+        @EndIf
+        @If.Context.ViewBag.high
+            <p>Too high!</p>
+        @EndIf
+          @If.Context.ViewBag.correct
+            <p>Yay!</p>
+        @EndIf
+        <form action="/formsubmitted" method="post">
+            <input type="text" name="playerInput"/>
+            <input type="submit" value="submit"/>
+        </form>
+    </div>
+    </body>
+</html>
